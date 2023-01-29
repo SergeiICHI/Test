@@ -6,7 +6,7 @@ c -> ["2", ":-)"]
 ['1234", "1567", "-2", "computer science"] -> ["-2"]
 ["Russia", "Denmark", "Kazan"] -> []*/
 
-string[] newArray(string[] array)
+string[] newArrayS(string[] array)
 {
     int j =0;
     for(int i=0;i<array.Length;i++)
@@ -16,8 +16,17 @@ string[] newArray(string[] array)
             j++;
         }
     }
-    j=0;
     string[] newArraySimbols = new string[j];
+    j=0;
+    for(int i =0;i<array.Length;i++)
+    {
+        if(array[i].Length <=3)
+        {
+            newArraySimbols[j] = array[i];
+            j++;
+        }
+    }
+    return newArraySimbols;
 }
 
 
@@ -25,9 +34,12 @@ void printArray(string[] array)
 {
     for(int i=0;i<array.Length;i++)
     {
-        Console.Write($"{array[i]}  ");
+        Console.WriteLine($"{array[i]}  ");
     }
 }
 
-string[] textArray = {"Lucky", "132", "lows", "GB", "top"};
+string[] textArray = {"Lucky", "1322", "lows", "GB", "top"};
 printArray(textArray);
+Console.WriteLine();
+string[] newArray = newArrayS(textArray);
+printArray(newArray);
