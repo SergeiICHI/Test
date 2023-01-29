@@ -6,6 +6,21 @@ c -> ["2", ":-)"]
 ['1234", "1567", "-2", "computer science"] -> ["-2"]
 ["Russia", "Denmark", "Kazan"] -> []*/
 
+string[] newArray(string[] array)
+{
+    int j =0;
+    for(int i=0;i<array.Length;i++)
+    {
+        if(array[i].Length <= 3)
+        {
+            j++;
+        }
+    }
+    j=0;
+    string[] newArraySimbols = new string[j];
+}
+
+
 void printArray(string[] array)
 {
     for(int i=0;i<array.Length;i++)
